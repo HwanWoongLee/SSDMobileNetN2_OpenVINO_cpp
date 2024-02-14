@@ -21,8 +21,8 @@ void processFrame(cv::Mat& frame, Detector& detector, const std::vector<std::str
 
 	for (const auto& obj : objects) {
 		cv::rectangle(frame, obj.box, cv::Scalar(255, 0, 255), 2);
-		cv::putText(frame, cv::format("%.1f", obj.score), obj.box.tl() + cv::Point(obj.box.width - 50, 0), 0, 1, cv::Scalar(255, 0, 255), 2);
-		cv::putText(frame, classNames[obj.label], obj.box.tl(), 0, 1, cv::Scalar(255, 0, 255), 2);
+		cv::putText(frame, cv::format("%.1f", obj.score), obj.box.tl() + cv::Point(obj.box.width - 50, 0), 0, 0.5, cv::Scalar(255, 0, 255), 1);
+		cv::putText(frame, classNames[obj.label], obj.box.tl(), 0, 0.5, cv::Scalar(255, 0, 255), 1);
 	}
 }
 
@@ -53,6 +53,8 @@ int main(int argc, char* argv[]) {
 
 		if (frame.empty())
 			break;
+
+		cv::resize(frame, frame, cv::Size(640, 360));
 
 		// Process Frame
 		processFrame(frame, detector, classNames);
