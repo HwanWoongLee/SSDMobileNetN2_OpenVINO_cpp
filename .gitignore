@@ -1,0 +1,8 @@
+*.vsidx
+*.ipch
+*.db
+*.opendb
+*.recipe
+*.iobj
+*.tlog
+*.ipdb

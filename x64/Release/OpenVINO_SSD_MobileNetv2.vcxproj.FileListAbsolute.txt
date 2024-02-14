@@ -1,0 +1,1 @@
+D:\OpenVINO_TEST\cpp\OpenVINO_SSD_MobileNetv2\x64\Release\OpenVINO_SSD_MobileNetv2.exe
